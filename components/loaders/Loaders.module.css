@@ -1,0 +1,14 @@
+.skeletons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px 10px;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

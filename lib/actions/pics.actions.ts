@@ -24,3 +24,10 @@ export const fetchRandomImage = async () => {
   );
   return response.json();
 };
+
+export const fetchImageById = async (id: string) => {
+  const response = await fetch(
+    `https://pixabay.com/api/?key=${process.env.PIXBAY_API_KEY}&id=${id}`
+  );
+  return response.json();
+};

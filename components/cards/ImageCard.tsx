@@ -106,7 +106,7 @@ const ImageCard: FC<ImageCardProps> = ({
           likes={likes}
           views={views}
           downloads={downloads}
-          pathToCopy={`/search?q=${query}&p=${page.toString()}&i=${id}`}
+          showClose={true}
         />
       </Modal>
     </>

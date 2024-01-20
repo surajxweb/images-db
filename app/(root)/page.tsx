@@ -24,16 +24,16 @@ export default async function Home() {
       <div className={styles.trending}>
         <div className={styles.trendingHeading}>Trending :</div>
         <div className={styles.links}>
-          <Link className={styles.link} href={"/search?q=flowers"}>
+          <Link className={styles.link} href={"/search?q=flowers&p=1"}>
             flowers,
           </Link>
-          <Link className={styles.link} href={"/search?q=love"}>
+          <Link className={styles.link} href={"/search?q=love&p=1"}>
             love,
           </Link>
-          <Link className={styles.link} href={"/search?q=forest"}>
+          <Link className={styles.link} href={"/search?q=forest&p=1"}>
             forest,
           </Link>
-          <Link className={styles.link} href={"/search?q=river"}>
+          <Link className={styles.link} href={"/search?q=river&p=1"}>
             river
           </Link>
         </div>

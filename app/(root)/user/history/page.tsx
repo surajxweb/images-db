@@ -15,7 +15,12 @@ const HistoryPage = async () => {
         {userInfo?.downloadHistory
           .reverse()
           .map((pic: any) => (
-            <UserImageCard key={pic.id} imageUrl={pic.imageUrl} id={pic.id} />
+            <UserImageCard
+              key={pic.id}
+              path={"history"}
+              imageUrl={pic.imageUrl}
+              id={pic.imageId}
+            />
           ))}
       </div>
     </div>

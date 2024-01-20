@@ -15,7 +15,12 @@ const LibraryPage = async () => {
         {userInfo?.userLibrary
           .reverse()
           .map((pic: any) => (
-            <UserImageCard key={pic.id} imageUrl={pic.imageUrl} id={pic.id} />
+            <UserImageCard
+              key={pic.id}
+              imageUrl={pic.imageUrl}
+              id={pic.imageId}
+              path={"library"}
+            />
           ))}
       </div>
     </div>

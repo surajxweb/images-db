@@ -5,15 +5,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "img.clerk.com", // Replace with the correct hostname
+        hostname: "img.clerk.com",
         port: "",
-        pathname: "/**", // Adjust the pathname pattern
+        pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "cdn.pixabay.com", // Replace with the correct hostname
+        hostname: "cdn.pixabay.com",
         port: "",
-        pathname: "/**", // Adjust the pathname pattern
+        pathname: "/**",
       },
     ],
   },

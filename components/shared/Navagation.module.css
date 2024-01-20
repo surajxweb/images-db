@@ -29,6 +29,10 @@
   color: #fff;
 }
 
+.signinMobile {
+  display: none;
+}
+
 .signup,
 .signin,
 .logo {
@@ -42,4 +46,14 @@
 .signin:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .signin,
+  .signup {
+    display: none;
+  }
+  .signinMobile {
+    display: block;
+  }
 }

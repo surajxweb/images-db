@@ -75,7 +75,6 @@ const ImageDetails: FC<ImageDetailsProps> = ({
         const dataString = await fetchUserInString(userId);
         const userData = JSON.parse(dataString);
 
-        // Check if the imageId is present in userLibrary
         const imageIdToCheck = id.toString();
         const isImagePresent = userData?.userLibrary.some(
           (pic: any) => pic.imageId === imageIdToCheck

@@ -7,7 +7,6 @@ import UserImageCard from "@/components/cards/UserImageCard";
 const LibraryPage = async () => {
   const user = await currentUser();
   const userInfo = await fetchUser(user?.id || "");
-  console.log(userInfo);
 
   return userInfo?._id ? (
     <div className={styles.container}>

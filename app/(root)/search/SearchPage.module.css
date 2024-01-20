@@ -31,3 +31,13 @@
 .skeletons {
   padding: 20px 10px;
 }
+
+@media (max-width: 768px) {
+  .searchParams {
+    font-size: 30px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+}

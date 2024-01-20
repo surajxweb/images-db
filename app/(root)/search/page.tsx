@@ -5,12 +5,20 @@ import { useSearchParams } from "next/navigation";
 import Navigation from "@/components/shared/Navigation";
 import styles from "./SearchPage.module.css";
 import Search from "@/components/client/Search";
+import { green, purple } from "@mui/material/colors";
 import { useEffect, useState } from "react";
 import { Searching } from "@/lib/actions/pics.actions";
 import ImageCard from "@/components/cards/ImageCard";
 import Pagination from "@mui/material/Pagination";
-import Skeleton from "@mui/material/Skeleton";
+import { createTheme } from "@mui/material/styles";
 import SkImageCards from "@/components/loaders/SkImageCards";
+
+const theme = createTheme({
+  palette: {
+    primary: green,
+    secondary: purple,
+  },
+});
 
 interface SearchResult {
   imageUrl: string;
@@ -84,7 +92,6 @@ const SearchPage = () => {
       </div>
       {isLoading && <SkImageCards />}
       <div className="imageList">
-       
         {!isLoading &&
           searchResults.map((pic: SearchResult) => (
             <ImageCard
@@ -119,7 +126,7 @@ const SearchPage = () => {
             count={size}
             page={pageNum ? +pageNum : 1}
             onChange={handleChange}
-            color="secondary"
+            color="primary"
           />
         </div>
       )}

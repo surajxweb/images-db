@@ -206,3 +206,40 @@
 .closeButton {
   cursor: pointer;
 }
+
+@media (max-width: 1330px) {
+  .container {
+    min-width: 300px;
+    width: 100%;
+    min-height: 800px;
+    overflow: scroll;
+  }
+
+  .header {
+    font-size: 18px;
+    line-height: 25px;
+    padding: 10px;
+  }
+
+  .content {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .info {
+    padding: 10px;
+  }
+
+  .question {
+    font-size: 12px;
+  }
+
+  .answer {
+    font-size: 14px;
+  }
+}

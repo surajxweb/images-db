@@ -31,3 +31,21 @@
   margin: 10px 0 20px 0;
   font-size: 12px;
 }
+
+@media (max-width: 480px) {
+  .container {
+    width: 170px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .container {
+    width: 150px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1500px) {
+  .container {
+    width: 200px;
+  }
+}

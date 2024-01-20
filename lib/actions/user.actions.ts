@@ -108,12 +108,10 @@ export async function fetchUserInString(userId: string) {
   try {
     connectToDB();
     const userInfo = await User.findOne({ userId: userId });
-    console.log(userInfo);
 
-    // Convert the user information to a JavaScript object
     const userObject = userInfo.toObject();
 
-    return JSON.stringify(userObject); // Returning the stringified object
+    return JSON.stringify(userObject);
   } catch (e: any) {
     throw new Error("User nahi mila, ye dekho: ", e);
   }

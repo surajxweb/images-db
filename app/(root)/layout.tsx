@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../globals.css";
-import { ClerkProvider } from '@clerk/nextjs'
+import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,25 +15,26 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider
-    appearance={{
-      elements: {
-        baseTheme: [dark],
-        card: {
-          backgroundColor: "#222222",
-        },
-        formButtonPrimary: {
-          fontSize: 14,
-          textTransform: "none",
-          backgroundColor: "#586aea",
-          "&:hover, &:focus, &:active": {
-            backgroundColor: "#4350ad",
+      appearance={{
+        elements: {
+          baseTheme: [dark],
+          card: {
+            backgroundColor: "#222222",
+          },
+          formButtonPrimary: {
+            fontSize: 14,
+            textTransform: "none",
+            backgroundColor: "#586aea",
+            "&:hover, &:focus, &:active": {
+              backgroundColor: "#4350ad",
+            },
           },
         },
-      },
-    }}>
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+      }}
+    >
+      <html lang="en">
+        <body>{children}</body>
+      </html>
     </ClerkProvider>
   );
 }

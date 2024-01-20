@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 8.906px;
+  background: rgba(217, 217, 217, 0.12);
+  box-shadow:
+    -3.943px 3.943px 3.943px 0px rgba(255, 255, 255, 0.43) inset,
+    3.943px -3.943px 3.943px 0px rgba(182, 182, 182, 0.43) inset;
+  backdrop-filter: blur(25.034873962402344px);
+}
+
+.links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.signup {
+  border-radius: 8.906px;
+  border: 2.672px solid #fff;
+  padding: 5px 10px;
+}
+
+.signup,
+.signin,
+.logo {
+  color: #fff;
+  font-size: 17.813px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19.95px; /* 112% */
+}

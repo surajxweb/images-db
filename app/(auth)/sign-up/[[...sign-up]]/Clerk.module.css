@@ -1,0 +1,29 @@
+.clerk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.container {
+  background-size: cover; /* or background-size: contain; */
+  background-position: center;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the alpha value for transparency */
+  pointer-events: none; /* Ensure the pseudo-element doesn't interfere with interactions */
+  z-index: -1; /* Place the pseudo-element behind the content */
+}

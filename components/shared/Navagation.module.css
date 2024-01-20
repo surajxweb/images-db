@@ -3,9 +3,9 @@
   padding: 15px 20px;
   align-items: center;
   justify-content: space-between;
-
+  color: #111;
   border-radius: 8.906px;
-  background: rgba(217, 217, 217, 0.12);
+  background: rgba(217, 217, 217, 0.7);
   box-shadow:
     -3.943px 3.943px 3.943px 0px rgba(255, 255, 255, 0.43) inset,
     3.943px -3.943px 3.943px 0px rgba(182, 182, 182, 0.43) inset;
@@ -20,14 +20,14 @@
 
 .signup {
   border-radius: 8.906px;
-  border: 2.672px solid #fff;
+  border: 2.672px solid #111;
   padding: 5px 10px;
 }
 
 .signup,
 .signin,
 .logo {
-  color: #fff;
+  color: #111;
   font-size: 17.813px;
   font-style: normal;
   font-weight: 600;

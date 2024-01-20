@@ -5,7 +5,7 @@ import styles from "./ImageCard.module.css";
 import ImageDetails from "../display/ImageDetails";
 import { useState } from "react";
 import Modal from "@mui/material/Modal";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { FC } from "react";
 
 interface ImageCardProps {
@@ -54,9 +54,7 @@ const ImageCard: FC<ImageCardProps> = ({
   const searchParams = useSearchParams();
   const i = searchParams.get("i");
 
-  const path = usePathname();
   const router = useRouter();
-  console.log(path);
 
   const [open, setOpen] = useState(id.toString() === i?.toString());
   const handleOpen = () => {

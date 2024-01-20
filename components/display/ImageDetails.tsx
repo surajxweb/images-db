@@ -5,9 +5,16 @@ import { MdOutlineRadioButtonUnchecked } from "react-icons/md";
 import { FaCopy } from "react-icons/fa6";
 import Link from "next/link";
 import { FC } from "react";
-import { useState } from "react";
 import { FaPlusSquare } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
+import {
+  addImageToDownloadHistory,
+  addImageToLibrary,
+  fetchUserInString,
+} from "@/lib/actions/user.actions";
+import { useAuth } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 interface ImageDetailsProps {
   handleClose: () => void;
@@ -52,7 +59,29 @@ const ImageDetails: FC<ImageDetailsProps> = ({
   downloads,
   pathToCopy,
 }) => {
+  const { userId } = useAuth();
+  const path = usePathname();
+
   const [selectedSize, setSelectedSize] = useState("preview");
+  const [isAddedToLibrary, setIsAddedToLibrary] = useState(false);
+
+  useEffect(() => {
+    const fetchUserDetails = async () => {
+      if (userId) {
+        const dataString = await fetchUserInString(userId);
+        const userData = JSON.parse(dataString);
+
+        // Check if the imageId is present in userLibrary
+        const imageIdToCheck = id.toString();
+        const isImagePresent = userData?.userLibrary.some(
+          (pic: any) => pic.imageId === imageIdToCheck
+        );
+
+        setIsAddedToLibrary(isImagePresent);
+      }
+    };
+    fetchUserDetails();
+  }, [userId, id]);
 
   const handleCopyToClipboard = async () => {
     try {
@@ -60,6 +89,29 @@ const ImageDetails: FC<ImageDetailsProps> = ({
       toast.success("Image Link Copied to Clipboard!");
     } catch (err) {
       console.error("Unable to copy text to clipboard:", err);
+    }
+  };
+
+  const addToDownloadHistory = async () => {
+    if (userId) {
+      await addImageToDownloadHistory({
+        userId: userId || "",
+        imageId: id.toString(),
+        imageUrl: image,
+        path: path,
+      });
+    }
+  };
+
+  const addImageToUserLibrary = async () => {
+    if (userId) {
+      setIsAddedToLibrary(true);
+      await addImageToLibrary({
+        userId: userId || "",
+        imageId: id.toString(),
+        imageUrl: image,
+        path: path,
+      });
     }
   };
 
@@ -147,9 +199,22 @@ const ImageDetails: FC<ImageDetailsProps> = ({
               </div>
             </div>
             <div className={styles.actions}>
-              <button className={styles.like}>
-                Add to Library <FaPlusSquare />
-              </button>
+              {userId && (
+                <>
+                  {!isAddedToLibrary ? (
+                    <button
+                      className={styles.like}
+                      onClick={addImageToUserLibrary}
+                    >
+                      Add to Library <FaPlusSquare />
+                    </button>
+                  ) : (
+                    <div className={styles.like}>
+                      Added to Library <FaCheckCircle color="green" />{" "}
+                    </div>
+                  )}
+                </>
+              )}
               <button onClick={handleCopyToClipboard} className={styles.copy}>
                 Copy link
                 <FaCopy />
@@ -157,6 +222,7 @@ const ImageDetails: FC<ImageDetailsProps> = ({
             </div>
 
             <Link
+              onClick={addToDownloadHistory}
               target="_blank"
               download
               prefetch={false}

@@ -1,9 +1,8 @@
 .header {
-  background: url("../../../public/background.jpeg") lightgray 50% / cover
-    no-repeat;
+  padding: 20px;
   background-size: cover; /* or background-size: contain; */
   background-position: center;
-  padding: 20px;
+  background-image: url("https://pixabay.com/get/ga47cb7a4932f408ae9071f79a0f108b2c20906d706ce120355621ca03c835ed7b9611df23a996a04ba0e7ec45637a3b662489ab77cd3d9106106a237c16af9fd_1280.jpg");
 }
 
 .searchParams {
@@ -15,15 +14,4 @@
   font-weight: 700;
   line-height: 87.359px; /* 205% */
   font-family: someMediumFont;
-}
-
-.param {
-  text-transform: capitalize;
-}
-
-.pages {
-  margin: 0px auto 30px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

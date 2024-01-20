@@ -80,7 +80,7 @@ const SearchPage = () => {
           Results: <span className={styles.param}>{query}</span>
         </div>
       </div>
-      <div className={styles.images}>
+      <div className="imageList">
         {searchResults.map((pic: SearchResult) => (
           <ImageCard
             key={pic.id}

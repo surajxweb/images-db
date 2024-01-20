@@ -12,7 +12,7 @@ const Login = () => {
       }}
     >
       You can sign in using email ID:{" "}
-      <span style={{ color: "#4bc34b" }}>test@testing</span> and password:{" "}
+      <span style={{ color: "#4bc34b" }}>test@testing.com</span> and password:{" "}
       <span style={{ color: "#4bc34b" }}>1234</span> to try out the app.
     </div>
   );

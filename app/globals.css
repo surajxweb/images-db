@@ -158,3 +158,8 @@ body {
 .cl-card {
   width: 100%;
 }
+
+.imageList {
+  padding: 20px 10px;
+  column-count: 5;
+}

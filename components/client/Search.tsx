@@ -11,7 +11,6 @@ const Search = ({ isNew = true }: { isNew?: boolean }) => {
     e.preventDefault();
     const inputValue = e.currentTarget.elements.namedItem("searchInput")
       .value as HTMLInputElement;
-    console.log();
 
     router.push(`/search?q=${formatSearchQuery(inputValue.toString())}&p=1`);
   };

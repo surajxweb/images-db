@@ -1,0 +1,11 @@
+.icon {
+  cursor: pointer;
+  color: #111;
+  margin: 0 5px;
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+}

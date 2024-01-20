@@ -19,8 +19,8 @@ export async function Searching({
 
 export const fetchRandomImage = async () => {
   const response = await fetch(
-    "https://api.unsplash.com/photos/random/?client_id=OF_UUhUzgH2YIAf1fEAqtRpnIEJxZUzTwWcYLc48bzE&orientation=landscape"
-    // { cache: "no-store" }
+    `https://api.unsplash.com/photos/random/?client_id=${process.env.UNSPLASH_CLIENT_ID}&orientation=landscape`
+    //  , { cache: "no-store" }
   );
   return response.json();
 };

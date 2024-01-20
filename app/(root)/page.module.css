@@ -1,11 +1,10 @@
 .main {
-  background: url("../../public/background.jpeg") lightgray 50% / cover
-    no-repeat;
   background-size: cover; /* or background-size: contain; */
   background-position: center;
   padding: 20px;
   min-height: 100vh;
   min-width: 100vw;
+  background-color: #fff;
 }
 
 .main::before {
@@ -40,12 +39,12 @@
 
 .trending {
   border-radius: 8.906px;
-  background: rgba(217, 217, 217, 0.12);
+  background: rgba(217, 217, 217, 0.7);
   box-shadow:
     -3.943px 3.943px 3.943px 0px rgba(255, 255, 255, 0.43) inset,
     3.943px -3.943px 3.943px 0px rgba(182, 182, 182, 0.43) inset;
   backdrop-filter: blur(25.034873962402344px);
-
+  color: #111;
   display: flex;
   gap: 8px;
   padding: 10px 15px;
@@ -66,7 +65,7 @@
 
 .link,
 .trendingHeading {
-  color: #fff;
+  color: #111;
   font-size: 13.359px;
   line-height: 21.375px;
   font-style: normal;

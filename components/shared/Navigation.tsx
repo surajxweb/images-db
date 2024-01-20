@@ -3,15 +3,17 @@ import { useAuth } from "@clerk/nextjs";
 import styles from "./Navagation.module.css";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import UserButton from "../client/UserButton";
 
 const Navigation = () => {
   const { userId } = useAuth();
   const path = usePathname();
-  console.log(userId);
 
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>Homepage</div>
+      <Link href={"/"} className={styles.logo}>
+        Image Harbor
+      </Link>
       {!userId && (
         <div className={styles.links}>
           <Link className={styles.signin} href={"/sign-in"}>
@@ -22,7 +24,11 @@ const Navigation = () => {
           </Link>
         </div>
       )}
-      {userId && <div className={styles.logout}>Logout</div>}
+      {userId && (
+        <div className={styles.user}>
+          <UserButton />
+        </div>
+      )}
     </div>
   );
 };
